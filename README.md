@@ -6,6 +6,8 @@ This project started as I was thinking about playing with the system firmware (B
 
 So I figured this would be a good opportunity to learn KiCad, make an adapter board, and practice soldering :-) The result turned out well and I am able to use my SF600 to flash at 24MHz, so this should also work nicely with the EM100 too.
 
+![Action shot](https://github.com/dhendrix/dediprog2up/blob/main/images/dediprog2up.jpg)
+
 ## Pinout
 ### UP
 
@@ -51,7 +53,6 @@ Pin | Signal | Signal | Pin
 
 There are a few online PCB fabrication companies. For this project I used Oshpark since they make it super-easy to order boards that were made with KiCad. Just upload the .kicad_pcb file to their website and they'll do the rest.
 
-
 ## Additional Parts
 ### Headers
 
@@ -59,6 +60,13 @@ There are a few online PCB fabrication companies. For this project I used Oshpar
 
 20-pin connector to plug into SF600/EM100: https://www.digikey.com/en/products/detail/sullins-connector-solutions/SFH11-PBPC-D10-ST-BK/1990090
 
+![Top with headers soldered on](https://github.com/dhendrix/dediprog2up/blob/main/images/dediprog2up_top.jpg)
+
+Top view with headers soldered on
+
+![Bottom with headers soldered on](https://github.com/dhendrix/dediprog2up/blob/main/images/dediprog2up_bottom.jpg)
+
+Bottom view with headers soldered on
 
 ### Cable
 
