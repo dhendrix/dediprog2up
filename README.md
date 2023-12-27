@@ -1,10 +1,10 @@
 # dediprog2up
 
-This is a basic adapter intended to make firmware development easier on UP Xtreme and UP Squared motherboards using Dediprog SF600 and EM100.
+This is an adapter intended to make firmware development easier on UP Xtreme and UP Squared motherboards using Dediprog SF600 and EM100.
 
-This project started as I was thinking about playing with the system firmware (BIOS) on the UP Xtreme and possibly trying to do a coreboot port. I had limited success at creating a custom cable with a 12-pin header on one side and a 20-pin header on the other to fit on a [Dediprog ADP-SF600-254-TO-127-CB](https://www.dediprog.com/product/ADP-SF600-254-TO-127-CB). I found it difficult to split the fine-pitch ribbon cable and ended up being unable read the ROM faster than 1.5MHz.
+This project started as I was thinking about playing with the system firmware (BIOS) on the UP Xtreme and trying to do a coreboot port. I had limited success at creating a custom cable with a 12-pin header on one side and a 20-pin header on the other to fit on a [Dediprog ADP-SF600-254-TO-127-CB](https://www.dediprog.com/product/ADP-SF600-254-TO-127-CB). It was difficult to split a fine-pitch ribbon cable and when I finally got one working it could only operate at 1.5MHz.
 
-So I figured this would be a good opportunity to learn KiCad, make an adapter board, and practice soldering :-) The result turned out well and I am able to use my SF600 to flash at 24MHz, so this should also work nicely with the EM100 too.
+Using this adapter board I was able to read and write the ROM using an SF600 at 24MHz, which is also fast enough to use an EM100 for SPI flash emulation.
 
 ![Action shot](https://github.com/dhendrix/dediprog2up/blob/main/images/dediprog2up.jpg)
 
@@ -53,6 +53,8 @@ Pin | Signal | Signal | Pin
 
 There are a few online PCB fabrication companies. For this project I used Oshpark since they make it super-easy to order boards that were made with KiCad. Just upload the .kicad_pcb file to their website and they'll do the rest.
 
+Here is a project page at Oshpark where you can order directly: https://oshpark.com/shared_projects/HCAx2AVW
+
 ## Additional Parts
 ### Headers
 
@@ -100,3 +102,8 @@ Inconsistent readings may indicate that your cable is too long or that there is 
 Here is how to read it using flashrom:
 
 	flashrom -p dediprog:voltage=1.8,spispeed=24M -r foo.bin
+
+# Related projects
+
+* A similar adapter for UP boards intended to work with Dediprog hardware: https://github.com/skiselev/up-dediprog-adapter
+* The qspimux project has adapters for several popular NOR flash sockets and adds isolatation circuitry to eliminate potential errors while also making it suitable for programmers that are always-on: https://github.com/felixheld/qspimux
